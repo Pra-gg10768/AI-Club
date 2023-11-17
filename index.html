@@ -1,138 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
     <title>AI Club</title>
 </head>
-
 <body>
-    <header>
-        <h1> <span class="yellow">AI</span> <span class="red">Club</span></h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#events">Events</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div id="threejs-container"></div>
 
-    <section id="home">
-        <div class="inline">
-            <div>
-                <img src="background-removebg.png" alt="Welcome Image" class="welcome-image">
+    <div class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">AI Club</a>
             </div>
-            <div class="welcome-content">
-                <h2>Welcome to the <span class="yellow">AI</span> <span class="red">Club</span> </h2>
-                <p id="typewriter-paragraph1"></p>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#home-section">Home</a></li>
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
         </div>
-    </section>
+    </div>
 
-    <section id="about" class="background-image">
-        <div class="about">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non purus auctor, vehicula est in,
-                ultricies justo. Fusce euismod massa nec urna volutpat, vel auctor justo fermentum. Sed et ante
-                libero.</p>
-            <p>Integer nec turpis a sapien consectetur venenatis. Mauris ultricies libero et quam eleifend, nec
-                ullamcorper felis consectetur. Sed eu eros eu elit vestibulum feugiat a id libero.</p>
+    <div class="home-section" id="home-section">
+        <div class="landing">
+            <p class="intro-text"><h1>Welcome to the <span class="purple">AI</span> <span class="yellow">Club</span>,</h1></p>
+            <p class="typewriter" id="typewriter"></p>
         </div>
-    </section>
-
-
-    <section id="our-team" class="background-image">
-        
-            <div class="our-team">
-                <h2>Our Team</h2>
-            <div class="lead">   
-                <div class="team-member">
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <!-- Front content of the card -->
-                                <img src="team-member1.jpg" alt="Team Member 1">
-                                <h3>John Doe</h3>
-                                <p>Role: Developer</p>
-                            </div>
-                            <div class="card-back">
-                                <!-- Back content of the card -->
-                                <p>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante libero.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- member 2-->
-                <div class="team-member">
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <!-- Front content of the card -->
-                                <img src="team-member2.jpg" alt="Team Member 2">
-                                <h3>David Jones</h3>
-                                <p>Role: Content Provider</p>
-                            </div>
-                            <div class="card-back">
-                                <!-- Back content of the card -->
-                                <p>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante libero.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- member 3-->
-                <div class="team-member">
-                    <div class="card">
-                        <div class="card-inner">
-                            <div class="card-front">
-                                <!-- Front content of the card -->
-                                <img src="team-member2.jpg" alt="Team Member 3">
-                                <h3>Alan Wake</h3>
-                                <p>Role: Marketing</p>
-                            </div>
-                            <div class="card-back">
-                                <!-- Back content of the card -->
-                                <p>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ante libero.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more team members as needed -->
-            </div> 
-            </div>
-    
-    </section>
-
-
-
-    <section id="events">
-        <h2>Upcoming Events</h2>
-        <p>Stay tuned for our exciting AI events!</p>
-    </section>
-
-    <section id="contact" class="about background-image" style="background-color: black;">
-        <h2>Contact Us</h2>
-        <p>Email: info@aiclub.com<br>Phone: +91 123456789</p>
-    </section>
-
-    <button id="scrollToTopBtn" onclick="scrollToTop()"></button>
-
-    <footer>
-        &copy; 2023 AI Club. All rights reserved.
-    </footer>
-
-    <script src = "script.js">
-
-    
-
-    </script>
-    
-        
-   
+    </div>
+    <script type="module" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>
-
 </html>
