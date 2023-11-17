@@ -1,272 +1,174 @@
+@import "https://fonts.googleapis.com/css2?family=Megrim&display=swap";
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #333;
-    overflow-x: hidden;
-}
-
-header {
-    background-color: rgba(51, 51, 51, 0.8);
-    padding-top: 50px;
-    text-align: center;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-header h1 {
-    margin-left: 5%;
-    font-size: 1.5em;
-}
-
-nav {
     overflow: hidden;
-    margin-right: 5%;
-    display: flex;
-    border-radius: 5px;
-    padding: 10px;
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
 }
 
-nav a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #555;
-}
-
-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    color: white;
-    margin-top: -50px;
-    z-index: 1;
-    padding: 100px 20px; /* Adjusted padding for consistency */
-}
-
-#home{
-    height: 100vh; /* Set a fixed height for the home section */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    padding: 20px;
-    color: white;
-    position: relative;
-    z-index: 1;
-}
-
-.inline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.welcome-content {
-    max-width: 10000px;
-
-    margin-right: 20%;
-    
-    font-size: 1em; /* Adjusted font size */
-}
-
-.welcome-image {
-    margin-top: 10%;
-    width: 150%;
-    margin-bottom: 40px;
-    margin-right: 22vh;
-}
-
-.welcome-content h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.welcome-content p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-}
-
-.welcome-content ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.welcome-content li {
-    margin-bottom: 10px;
-}
-
-.about,
-.events {
-    background-color: rgba(30, 26, 26, 0.9);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 40px;
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.about h2 {
-    color: #ffffff;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 1.1em;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+#threejs-container {
     position: fixed;
-    bottom: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    transition: transform 0.3s;
-    z-index: 1;
+    height: 100%;
+    z-index: -1; /* Ensure the Three.js container is behind other content */
+}
+#word {
+    font-family: Megrim, cursive;
+    font-size: 20vh;
+    position: top;
+    margin: 10;
+    color: #fc0;
+    -webkit-text-stroke: 0.15vh #c0f;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
 }
 
-.footer-hidden {
-    transform: translateY(100%);
-}
-
-button#scrollToTopBtn {
+.nav {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+    height: 65px;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    align-items: center;
+    line-height: 65px;
+    text-align: center;
+    background-color: #ffffff00;
+    z-index: 2; /* Ensure the navbar is above the Three.js background */
+}
+
+.nav div.logo a {
+    -webkit-text-stroke: 0.15vh #c0f;
+    font-family: Megrim, cursive;
+    text-decoration: none;
+    color: #fff;
+    font-size: 3rem;
+    transform: translate(-50%, -50%);
+}
+
+.nav div.main_list ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-right: 50px;
+}
+
+.nav div.main_list ul li {
+    padding-right: 2rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+}
+.nav div.main_list ul li a:hover{
+    color:#fbf548;
+}
+.nav div.main_list ul li a::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #fbf548;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+.nav div.main_list ul li a:hover:after{
+    transform: scale(1);
+}
+
+.nav div.logo a:hover{
+    -webkit-text-stroke: #fbf548;
+}
+
+.landing {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.navTrigger {
     cursor: pointer;
-    border-radius: 50%;
-    display: none; /* Initially hide the button */
+    display: none;
 }
 
-button#scrollToTopBtn:hover {
-    background-color: red;
-}
-#contact {
-    margin-bottom: 50px;
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav a {
-        width: 100%;
-        box-sizing: border-box;
-    }
+.show_list {
+    display: flex;
+}
+.purple{
+    color: #c0f;
+    font-family: Megrim, cursive;
 }
 .yellow{
-    color: yellow;
+    color: #fbf548;
+    font-family: Megrim, cursive;
 }
-.red{
-    color:red;
+h1{
+    color: #fff;
+    font-size: 3rem;
 }
 
-/*flip card
-/* Add the following styles to your existing CSS */
+/* home section*/
+.home-section {
+    padding-top: 100px;
+    z-index: 1;
+}
 
-.our-team {
+.landing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.team-members {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Allow cards to wrap to the next line */
+.intro-text p{
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 20px;
 }
-.lead{
-    margin-top: 100px;
-    display: flex;
-    justify-content: space-between;
+.typewriter{
+    color: #fff;
+    font-size: 2rem;
+}
+/* about section */
+.about-section {
+    background-color: #16001673; /* Adjust background color as needed */
+    color: #fff;
+    z-index: 1;
+    text-align: center;
+}
+
+.container {
+   
     align-items: center;
 }
 
-.card {
-    width: 200px;
-    height: 300px;
-    perspective: 1000px;
-    margin: 10px; /* Add margin for spacing between cards */
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-.card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-}
-
-.card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-}
-
-.card-front {
-    background-color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: rotateY(0deg);
-}
-
-.card-back {
-    background-color: #333;
-    transform: rotateY(180deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.card h3 {
-    font-size: 1.2em;
-    margin: 0;
-}
-
-.card p {
-    font-size: 0.8em;
-    margin: 0;
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
