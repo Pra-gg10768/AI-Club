@@ -93,6 +93,7 @@ m.onBeforeCompile = shader => {
         float d = length(abs(position) / vec3(40., 10., 40));
         d = clamp(d, 0., 1.);
         vColor = mix(vec3(227., 155., 0.), vec3(100., 50., 255.), d) / 255.;
+        vColor = mix(vColor, vec3(50., 50., 50.) / 255., 0.5); // Add this line to dull the color
       `
   ).replace(
     `#include <begin_vertex>`,
@@ -103,7 +104,7 @@ m.onBeforeCompile = shader => {
         transformed += vec3(cos(moveS) * sin(moveT), cos(moveT), sin(moveS) * sin(moveT)) * shift.w;
       `
   );
-  //console.log(shader.vertexShader);
+  // console.log(shader.vertexShader);
   shader.fragmentShader = `
     varying vec3 vColor;
     ${shader.fragmentShader}
@@ -111,13 +112,13 @@ m.onBeforeCompile = shader => {
     `#include <clipping_planes_fragment>`,
     `#include <clipping_planes_fragment>
         float d = length(gl_PointCoord.xy - 0.5);
-        //if (d > 0.5) discard;
+        // if (d > 0.5) discard;
       `
   ).replace(
     `vec4 diffuseColor = vec4( diffuse, opacity );`,
     `vec4 diffuseColor = vec4( vColor, smoothstep(0.5, 0.1, d)/* * 0.5 + 0.5*/ );`
   );
-  //console.log(shader.fragmentShader);
+  // console.log(shader.fragmentShader);
 };
 
 renderer.setAnimationLoop(() => {
@@ -148,6 +149,7 @@ function typeWriter() {
 window.onload = function () {
     typeWriter();
 };
+
 
 
 
